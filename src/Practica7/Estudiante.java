@@ -1,5 +1,7 @@
 package Practica7;
 
+import java.util.Random;
+
 // Creación clase Estudiante
 public class Estudiante {
     private String nombre;
@@ -28,6 +30,34 @@ public class Estudiante {
         this.numeroIntervenciones = numeroIntervenciones;
     }
 
-    public void incrementarNumeroIntervenciones() {
+    public void agregarIntervencion() {
+        this.numeroIntervenciones++;
     }
+    public String toString() {
+        return "Estudiante " + this.nombre + " con " + this.numeroIntervenciones + " intervenciones";
+    }
+    public static Estudiante seleccionarEstudiante(Estudiante[] estudiantes) {
+        int menorIntervenciones = estudiantes[0].getNumeroIntervenciones();
+        for (int i = 1; i < estudiantes.length; i++) {
+            if (estudiantes[i].getNumeroIntervenciones() < menorIntervenciones) {
+                menorIntervenciones = estudiantes[i].getNumeroIntervenciones();
+            }
+        }
+
+        Estudiante[] candidatos = new Estudiante[estudiantes.length];
+        int cantidadCandidatos = 0;
+        for (int i = 0; i < estudiantes.length; i++) {
+            if (estudiantes[i].getNumeroIntervenciones() == menorIntervenciones) {
+                candidatos[cantidadCandidatos] = estudiantes[i];
+                cantidadCandidatos++;
+            }
+        }
+
+        Random rand = new Random();
+        Estudiante seleccionado = candidatos[rand.nextInt(cantidadCandidatos)];
+        seleccionado.agregarIntervencion();
+        return seleccionado;
+    }
+    
+
 }
