@@ -1,5 +1,3 @@
-package Practica7;
-
 import java.util.Random;
 
 // Creación clase Estudiante

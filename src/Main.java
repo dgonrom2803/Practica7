@@ -1,5 +1,3 @@
-package Practica7;
-
 public class Main {
     public static void main(String[] args) {
         Estudiante[] estudiantes = new Estudiante[15];
