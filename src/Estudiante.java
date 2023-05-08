@@ -6,6 +6,7 @@ public class Estudiante {
     private int numeroIntervenciones;
 
     // Constructor que recibe el nombre y el número de intervenciones
+    public Estudiante(){}
     public Estudiante(String nombre, int numeroIntervenciones) {
         this.nombre = nombre;
         this.numeroIntervenciones = numeroIntervenciones;
@@ -56,6 +57,6 @@ public class Estudiante {
         seleccionado.agregarIntervencion();
         return seleccionado;
     }
-    
+
 
 }

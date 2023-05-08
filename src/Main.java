@@ -1,4 +1,4 @@
-public class Main {
+public class Main extends Estudiante {
     public static void main(String[] args) {
         Estudiante[] estudiantes = new Estudiante[15];
         estudiantes[0] = new Estudiante("Juan María", 0);
@@ -19,6 +19,5 @@ public class Main {
 
         Estudiante seleccionado = Estudiante.seleccionarEstudiante(estudiantes);
         System.out.println("Seleccionado: " + seleccionado);
-
     }
 }
