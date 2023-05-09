@@ -15,9 +15,6 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 public class SeleccionAlumnoPrueba {
-    public static void main(String[] args) {
-        seleccionAlumno();
-    }
     public static void seleccionAlumno() {
         String path = "C://Users//victo//IdeaProjects//Practica7//src//daw1.xml";
 

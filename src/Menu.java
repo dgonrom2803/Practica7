@@ -1,12 +1,13 @@
+import org.xml.sax.SAXException;
+
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Menu extends AlumnoAleatorio{
+public class Menu {
     public static void main(String[] args){
-
-
 
         Scanner sn = new Scanner(System.in);
         boolean salir = false;
@@ -34,16 +35,18 @@ public class Menu extends AlumnoAleatorio{
                         break;
                     case 2:
                         System.out.println("Has seleccionado opción 2");
+                        ImportarXML.importaXML();
                         break;
                     case 3:
                         System.out.println("Has seleccionado opción 3");
-                        alumnoAleatorio();
+                        ExportarXML.exportaXML();
                         break;
                     case 4:
                         System.out.println("Has seleccionado opción 4");
+                        SeleccionAlumnoPrueba.seleccionAlumno();
                         break;
                     case 5:
-                        System.out.println("Has seleccionado opción 5");
+                        System.out.println("Has seleccionado opción 5" );
                         Daw1.daw1();
                         break;
                     case 6:
@@ -58,6 +61,10 @@ public class Menu extends AlumnoAleatorio{
             } catch (ParserConfigurationException e) {
                 throw new RuntimeException(e);
             } catch (TransformerException e) {
+                throw new RuntimeException(e);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            } catch (SAXException e) {
                 throw new RuntimeException(e);
             }
         }
