@@ -10,12 +10,15 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 import java.io.File;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class ImportarXML {
 
     public static void importaXML() throws ParserConfigurationException, TransformerException, IOException, SAXException {
-
-        File inputFile = new File("src/daw1.xml"); //Ruta al archivo XML
+        Scanner importa = new Scanner(System.in);
+        System.out.println("Escriba la ruta de importación");
+        String rutaImportacion = importa.nextLine();
+        File inputFile = new File(rutaImportacion); //Ruta al archivo XML
 
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
